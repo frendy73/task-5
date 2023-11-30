@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>О нас</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, .active {
+            background-color: #34495e;
+        }
+
+        main {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html" class="active">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>О нас</h1>
+    <p>Узнайте больше о нашей компании и наших ценностях.</p>
+    <button onclick="toggleDetails()">Подробнее о компании</button>
+    <div id="details" class="hidden">
+        <p>Здесь расположена подробная информация о компании, её истории, достижениях и целях.</p>
+        <p>Наша команда состоит из опытных специалистов, стремящихся к инновациям и качеству.</p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2023 Промо-сайт. Все права защищены.</p>
+</footer>
+
+<script>
+    function toggleDetails() {
+        var details = document.getElementById("details");
+        if (details.classList.contains("hidden")) {
+            details.classList.remove("hidden");
+        } else {
+            details.classList.add("hidden");
+        }
+    }
+</script>
+
+</body>
+</html>

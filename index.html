@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #2c3e50;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #34495e;
+        }
+
+        nav a:hover, .active {
+            background-color: #34495e;
+        }
+
+        main {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .time {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1>Добро пожаловать на наш сайт!</h1>
+    <p>Мы рады приветствовать вас на нашем промо-сайте. Здесь вы найдете множество полезной информации.</p>
+    <p>Текущее время: <span class="time" id="currentTime"></span></p>
+    <button onclick="showWelcomeMessage()">Показать приветствие</button>
+    <p id="welcomeMessage"></p>
+</main>
+
+<footer>
+    <p>&copy; 2023 Промо-сайт. Все права защищены.</p>
+</footer>
+
+<script>
+    function displayCurrentTime() {
+        const now = new Date();
+        const timeString = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        document.getElementById('currentTime').textContent = timeString;
+    }
+
+    setInterval(displayCurrentTime, 1000);
+
+    function showWelcomeMessage() {
+        const welcomeMessage = 'Мы очень рады видеть вас здесь! Надеемся, вам понравится наш сайт.';
+        const element = document.getElementById('welcomeMessage');
+        if(element.textContent === "") {
+            document.getElementById('welcomeMessage').textContent = welcomeMessage;
+        } else {
+            document.getElementById('welcomeMessage').textContent = "";
+        }
+    }
+</script>
+
+</body>
+</html>
